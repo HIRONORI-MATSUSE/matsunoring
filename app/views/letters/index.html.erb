@@ -8,6 +8,7 @@
 <% @letters.each do |letter| %>
   <tr>
     <td><%= letter.content %></td>
+    <td><%= link_to '詳細を確認する', letter_path(letter.id) %></td>
   </tr>
 <% end %>
 </table>

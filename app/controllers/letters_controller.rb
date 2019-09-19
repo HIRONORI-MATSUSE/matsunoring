@@ -12,10 +12,16 @@ class LettersController < ApplicationController
     redirect_to new_letter_path
   end
 
+  def show
+    @letter = Letter.find(params[:id])
+  end
+
   private
 
   def letter_params
     params.require(:letter).permit(:content)
   end
+
+
 
 end
