@@ -1,4 +1,6 @@
 class LettersController < ApplicationController
+  before_action :set_letter, only:[:show, :edit, :update]
+
   def index
     @letters = Letter.all
   end
@@ -16,33 +18,23 @@ class LettersController < ApplicationController
     end
   end
 
-
-  def show
-    @letter = Letter.find(params[:id])
-  end
-
-  def edit
-    @letter = Letter.find(params[:id])
-  end
-
   def update
-    @letter = Letter.find(params[:id])
     if @letter.update(letter_params)
       redirect_to letters_path, notice: "Letterを編集しました。"
     else
       render :edit
     end
   end
-
-
-
-
+  
   private
 
   def letter_params
     params.require(:letter).permit(:content)
   end
 
+  def set_letter
+   @letter = Letter.find(params[:id])
+  end
 
 
 end
