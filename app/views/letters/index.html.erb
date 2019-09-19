@@ -9,6 +9,7 @@
   <tr>
     <td><%= letter.content %></td>
     <td><%= link_to '詳細を確認する', letter_path(letter.id) %></td>
+    <td><%= link_to 'letterを編集する',edit_letter_path(letter.id) %></td>
   </tr>
 <% end %>
 </table>

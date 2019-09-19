@@ -21,6 +21,20 @@ class LettersController < ApplicationController
     @letter = Letter.find(params[:id])
   end
 
+  def edit
+    @letter = Letter.find(params[:id])
+  end
+
+  def update
+    @letter = Letter.find(params[:id])
+    if @letter.update(letter_params)
+      redirect_to letters_path, notice: "Letterを編集しました。"
+    else
+      render :edit
+    end
+  end
+
+
 
 
   private
