@@ -8,13 +8,20 @@ class LettersController < ApplicationController
   end
 
   def create
-    Letter.create(letter_params)
-    redirect_to new_letter_path
+    @letter = Letter.new(letter_params)
+    if @letter.save
+      redirect_to letters_path, notice: "Letterを作成しました"
+    else
+      render :new
+    end
   end
+
 
   def show
     @letter = Letter.find(params[:id])
   end
+
+
 
   private
 
