@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :letters
+  resources :letters do
     collection do
       post :confirm
     end

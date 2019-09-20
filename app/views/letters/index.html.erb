@@ -1,20 +1,19 @@
 <h1>Letter一覧</h1>
 
 <p><%= notice %></p>
-
-<table>
-  <tr>
-    <th>コメント</th>
-  </tr>
-
-<% @letters.each do |letter| %>
-  <tr>
-    <td><%= letter.content %></td>
-    <td><%= link_to '詳細を確認する', letter_path(letter.id) %></td>
-    <td><%= link_to "Letterを編集する", edit_letter_path(letter.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><<%= link_to 'Letterを削除する', letter_path(letter.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
-<% end %>
-</table>
-
+<div class="table">
+  <table> 
+    <tr>
+      <th>コメント</th>
+    </tr>
+  <% @letters.each do |letter| %>
+      <tr>
+        <td><%= letter.content %></td>
+        <td><%= link_to '詳細を確認する', letter_path(letter.id) %></td>
+        <td><%= link_to "Letterを編集する", edit_letter_path(letter.id), data: { confirm: '本当に編集していいですか？' } %></td>
+        <td><<%= link_to 'Letterを削除する', letter_path(letter.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 <%= link_to 'Letter作成画面へ', new_letter_path %>

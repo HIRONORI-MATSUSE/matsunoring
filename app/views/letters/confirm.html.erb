@@ -1,9 +1,9 @@
 <p>以下の内容で送信する？</p>
   <%= form_with(model: @letter, url: letters_path, local: true) do |form| %>
-  <%= f.hidden_field :content %>
+  <%= form.hidden_field :content %>
 
-  <p>コメント:<%= @letter.conment %></p>
-  <%= form.submitb "登録する" %>
+  <p>コメント:<%= @letter.content %></p>
+  <%= form.submit "登録する" %>
 
   <%= form.submit "戻る", name:'back' %>
 <% end %>

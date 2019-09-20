@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+  <header class="header">
+    <nav>
+      <ul>
+        <li><a href="/letters">HOME</a></li>
+        <li><a href="/letters/new">Letter作成画面へ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="wapper">
+        <%= yield %>
+  </section>
+  <footer class="footer">
+    <p>Matsunoring</p>
+    <p>© 2019 Copyright 松瀬　弘典 Corp.</p>
+  </footer>
   </body>
 </html>

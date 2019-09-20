@@ -11,7 +11,7 @@ class LettersController < ApplicationController
 
   def create
     @letter = Letter.new(letter_params)
-    if params[:back}
+    if params[:back]
       render :new
     else
       if @letter.save
@@ -47,7 +47,7 @@ class LettersController < ApplicationController
   end
 
   def set_letter
-   @letter = Letter.find(params[:id])
+    @letter = Letter.find(params[:id])
   end
 
 
