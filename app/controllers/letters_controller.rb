@@ -31,6 +31,10 @@ class LettersController < ApplicationController
     redirect_to letters_path, notice:"Letterを削除しました。"
   end
 
+  def confirm
+    @letter = Letter.new(letter_params)
+  end
+
   private
 
   def letter_params
