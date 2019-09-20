@@ -3,5 +3,7 @@
   <%= f.hidden_field :content %>
 
   <p>コメント:<%= @letter.conment %></p>
-  <%= form.submitb "送信する" %>
+  <%= form.submitb "登録する" %>
+
+  <%= form.submit "戻る", name:'back' %>
 <% end %>

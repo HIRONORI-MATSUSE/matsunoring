@@ -11,11 +11,15 @@ class LettersController < ApplicationController
 
   def create
     @letter = Letter.new(letter_params)
-    if @letter.save
-      redirect_to letters_path, notice: "Letterを作成しました"
-    else
+    if params[:back}
       render :new
-    end
+    else
+      if @letter.save
+        redirect_to letters_path, notice: "Letterを作成しました"
+      else
+        render :new
+      end
+    end  
   end
 
   def update
@@ -33,6 +37,7 @@ class LettersController < ApplicationController
 
   def confirm
     @letter = Letter.new(letter_params)
+    render :new if @letter.invalid?
   end
 
   private
