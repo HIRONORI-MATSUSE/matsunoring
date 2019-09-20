@@ -1,5 +1,5 @@
 class LettersController < ApplicationController
-  before_action :set_letter, only:[:show, :edit, :update]
+  before_action :set_letter, only:[:show, :edit, :update, :destroy]
 
   def index
     @letters = Letter.all
@@ -25,7 +25,12 @@ class LettersController < ApplicationController
       render :edit
     end
   end
-  
+
+  def destroy
+    @letter.destroy
+    redirect_to letters_path, notice:"Letterを削除しました。"
+  end
+
   private
 
   def letter_params

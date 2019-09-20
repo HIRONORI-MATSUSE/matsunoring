@@ -9,7 +9,8 @@
   <tr>
     <td><%= letter.content %></td>
     <td><%= link_to '詳細を確認する', letter_path(letter.id) %></td>
-    <td><%= link_to 'letterを編集する',edit_letter_path(letter.id) %></td>
+    <td><%= link_to "Letterを編集する", edit_letter_path(letter.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><<%= link_to 'Letterを削除する', letter_path(letter.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
